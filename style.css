@@ -1,5 +1,5 @@
 :root {
-  --dark-bg: #0e0e0f;
+  --dark-bg: #000;
   --light-text: #fff;
   --gray-text: #aaa;
   --accent: #3b82f6;
@@ -21,22 +21,36 @@ body {
 /* HERO */
 .hero {
   position: relative;
-  background: #000; /* fondo negro base */
+  background: #000;
   text-align: center;
   padding: 140px 20px;
-  overflow: hidden; /* oculta bordes del PNG */
+  overflow: hidden;
 }
+
+/* === Fondo Hero === */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/hero-bg.jpg") center/cover no-repeat;
+  opacity: 1; /* ajustá entre 0.2–0.4 según contraste */
+  z-index: 0;
+}
+
+/* Ya existe */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: rgb(0, 0, 0);
+  opacity: 0.33; /* este da la capa negra superior */
+  z-index: 1;
 }
+
 .hero-content {
   position: relative;
-  max-width: 700px;
-  margin: 0 auto;
-  z-index: 2;
+  z-index: 2; /* contenido encima del fondo */
 }
+
 .hero h1 {
   font-size: 2.5rem;
   margin: 20px 0;
@@ -245,71 +259,80 @@ body {
   box-shadow: 0 0 100px rgba(81, 147, 255, 0.5);
 }
 
-/* WAITLIST */
+/* === WAITLIST (reworked layout) === */
 .waitlist {
-  text-align: center;
+  background: #0a0a0a;
   padding: 120px 20px;
-  background: #0a0a0a;
-  position: relative;
-  overflow: hidden;
 }
 
-.waitlist::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #0a0a0a;
-  z-index: 0;
+.waitlist-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
-.waitlist h2 {
+.waitlist-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.waitlist-text h2 {
   font-size: 2rem;
   margin-bottom: 10px;
-  position: relative;
-  z-index: 1;
 }
 
-.waitlist p {
+.waitlist-text p {
   color: #b5b5b5;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-size: 1.1rem;
-  position: relative;
-  z-index: 1;
   line-height: 1.6;
 }
 
-.waitlist form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
+.disclaimer {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
 }
 
-.waitlist input {
+.waitlist-form {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+}
+
+.waitlist-form form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.waitlist-form input {
   background: #000;
   color: #fff;
   border: 1px solid #333;
   border-radius: 8px;
   padding: 12px 18px;
-  min-width: 260px;
+  width: 100%;
   outline: none;
   font-size: 1rem;
   transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.waitlist input::placeholder {
-  color: #666;
-}
-
-.waitlist input:focus {
+.waitlist-form input:focus {
   border-color: var(--accent);
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
 
-.waitlist button {
+.waitlist-form button {
   background: var(--accent);
   color: #fff;
   border: none;
@@ -317,59 +340,79 @@ body {
   padding: 12px 24px;
   font-size: 1rem;
   cursor: pointer;
+  width: 100%;
   transition: transform 0.2s ease, background 0.3s ease;
 }
 
-.waitlist button:hover {
+.waitlist-form button:hover {
   background: #60a5fa;
   transform: scale(1.03);
 }
 
-.disclaimer {
-  display: block;
-  margin-top: 25px;
-  font-size: 0.85rem;
-  color: #666;
-  position: relative;
-  z-index: 1;
-}
-
 /* Responsive */
-@media (max-width: 768px) {
-  .waitlist h2 {
-    font-size: 1.6rem;
+@media (max-width: 900px) {
+  .waitlist-container {
+    flex-direction: column;
+    text-align: center;
   }
-  .waitlist p {
-    font-size: 1rem;
-  }
-  .waitlist input {
-    min-width: 200px;
+  .waitlist-form form {
+    max-width: 100%;
   }
 }
 
 
-/* CONTACT SECTION */
+/* === CONTACT (reworked layout) === */
 .contact {
   background: #000;
-  text-align: center;
   padding: 120px 20px;
 }
 
-.contact h2 {
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 320px;
+}
+
+.contact-text h2 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.contact p {
+.contact-text p {
   color: #b5b5b5;
-  margin: 0 auto 30px;
+  font-size: 1.1rem;
   line-height: 1.7;
+}
+
+.contact-action {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+}
+
+.email-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
 }
 
 .email {
   font-weight: 600;
   color: #fff;
-  margin-top: 10px;
+  margin-bottom: 12px;
   font-size: 1.1rem;
 }
 
@@ -392,9 +435,21 @@ body {
 .copy-message {
   margin-top: 10px;
   font-size: 0.9rem;
-  color: #ffffff;
+  color: #60a5fa;
   min-height: 20px;
 }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .email-block {
+    max-width: 100%;
+  }
+}
+
 
 /* FOOTER */
 footer {

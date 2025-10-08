@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opteam — The #1 Scrum Framework</title>
+  <title>Opteam — The Scrum Framework</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,8 +13,8 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <img src="assets/Logo.png" alt="Opteam Logo" class="logo">
-      <h1>The #1 Scrum Framework</h1>
-      <p>Opteam is the best software for team optimization and agility. Faithful to the Agile Manifesto, simple enough not to steal your time, yet powerful enough to help you deliver real value.</p>
+      <h1>The Scrum Framework</h1>
+      <p>Opteam is the best software for team optimization and agility. Faithful to the Agile Manifesto,<br> simple enough not to steal your time, yet powerful enough to help you deliver real value.</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn-light">Contact Us</a>
         <a href="#waitlist" class="btn-dark">Join Beta Waitlist</a>
@@ -100,29 +100,45 @@
 
 
 
-    <!-- WAITLIST -->
-    <section class="waitlist" id="waitlist">
-    <h2>Join the Opteam Waitlist</h2>
-    <p>Launching globally in <strong>late 2025</strong>.  
-        Be the first to know when Opteam goes live — we’ll notify you by email.</p>
+<!-- WAITLIST -->
+<section class="waitlist" id="waitlist">
+  <div class="waitlist-container">
+    <div class="waitlist-text">
+      <h2>Join the Opteam Waitlist</h2>
+      <p>
+        Launching globally in <strong>late 2025</strong>.  
+        Be the first to know when Opteam goes live — we’ll notify you by email.
+      </p>
+      <small class="disclaimer">We respect your privacy. No spam — just updates.</small>
+    </div>
 
-    <form id="waitlistForm">
+    <div class="waitlist-form">
+      <form id="waitlistForm">
         <input type="email" placeholder="Enter your email address" required>
         <button type="submit">Notify Me</button>
-    </form>
-
-    <small class="disclaimer">We respect your privacy. No spam — just updates.</small>
-    </section>
+      </form>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>
-    For partnership inquiries, support, or media requests, please contact us directly at: <span class="email">contact@opteam.app</span>
-  </p>
-  <button id="copyEmailBtn" class="copy-btn">Copy Email</button>
-  <p id="copyMessage" class="copy-message"></p>
+  <div class="contact-container">
+    <div class="contact-text">
+      <h2>Contact Us</h2>
+      <p>For partnerships, support, or media inquiries, you can reach us directly at:</p>
+    </div>
+
+    <div class="contact-action">
+      <div class="email-block">
+        <span class="email">contact@opteam.app</span>
+        <button id="copyEmailBtn" class="copy-btn">Copy Email</button>
+        <p id="copyMessage" class="copy-message"></p>
+      </div>
+    </div>
+  </div>
 </section>
+
 
 <!-- FOOTER -->
 <footer>
