@@ -10,7 +10,7 @@ msg.style.color = '#60a5fa';
 form.parentElement.appendChild(msg);
 
 // URL del Apps Script (pegá aquí tu URL pública)
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzNR2lVZ4z2eY_dqjwUcS8u0HYVcS8YONpQtmA_-Qr8z-fZFI5BZu9y1no0KcVP15h8VQ/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzhcssyaRODk-hgc6bE5dQSVtQQ6X5RPNyIUzJ_N9J8u0fE6Vrl8AttECdHxSycnzKzTQ/exec';
 
 form.onsubmit = async (e) => {
   e.preventDefault();
