@@ -9,6 +9,7 @@
 <body>
 
   <!-- HERO -->
+  <section class="hero reveal">
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -21,8 +22,10 @@
       </div>
     </div>
   </section>
+  </section>
 
   <!-- ABOUT -->
+  <section class="about reveal">
   <section class="about">
     <div class="about-block">
       <h2>What is Scrum?</h2>
@@ -33,8 +36,10 @@
       <p>Opteam is a versatile management app designed to optimize team performance and streamline company operations efficiently.</p>
     </div>
   </section>
+  </section>
 
   <!-- FEATURES -->
+  <section class="features reveal">
   <section class="features">
     <h2>Manage your entire business, optimize team collaboration.</h2>
     <div class="feature-cards">
@@ -55,8 +60,10 @@
       </div>
     </div>
   </section>
+  </section>
 
 <!-- DIFFERENTIATOR -->
+<section class="differentiator reveal">
 <section class="differentiator">
   <h2>Why Opteam Stands Out</h2>
   <p class="subtitle">Three core principles that make Opteam more than a management tool.</p>
@@ -81,8 +88,10 @@
     </div>
   </div>
 </section>
+</section> 
 
   <!-- AGENT -->
+    <section class="agent reveal">
     <section class="agent">
     <h2>Powered by AI Agents</h2>
     <p>Opteam redefines management tools with an intelligent interface that minimizes time spent on administration and maximizes results through automation.</p>
@@ -97,10 +106,11 @@
     </div>
 
     </section>
-
+    </section>
 
 
 <!-- WAITLIST -->
+<section class="waitlist reveal">
 <section class="waitlist" id="waitlist">
   <div class="waitlist-container">
     <div class="waitlist-text">
@@ -120,8 +130,10 @@
     </div>
   </div>
 </section>
+</section>
 
 <!-- CONTACT -->
+<section class="contact reveal">
 <section class="contact" id="contact">
   <div class="contact-container">
     <div class="contact-text">
@@ -137,6 +149,7 @@
       </div>
     </div>
   </div>
+</section>
 </section>
 
 
@@ -163,6 +176,18 @@
   });
 </script>
 
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // solo una vez
+      }
+    });
+  }, { threshold: 0.3}); // activa cuando el 15% del elemento entra
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
