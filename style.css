@@ -18,6 +18,10 @@ body {
   line-height: 1.6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* HERO */
 .hero {
   position: relative;
@@ -407,23 +411,25 @@ body {
 
 .email-block {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   padding: 24px;
   width: 100%;
   max-width: 400px;
+  border: 1px solid #333;
+  border-radius: 10px;
 }
 
 .email {
   font-weight: 600;
   color: #fff;
-  margin-bottom: 12px;
   font-size: 1.1rem;
 }
 
 .copy-btn {
-  background: var(--accent);
-  color: #fff;
+  background: white;
+  color: #000;
   border: none;
   border-radius: 8px;
   padding: 10px 22px;
@@ -433,7 +439,8 @@ body {
 }
 
 .copy-btn:hover {
-  background: #60a5fa;
+  background: #ffffff;
+  color: #000;
   transform: scale(1.05);
 }
 
