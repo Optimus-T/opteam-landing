@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opteam — The #1 Scrum Framework</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="assets/Logo.png" alt="Opteam Logo" class="logo">
+      <h1>The #1 Scrum Framework</h1>
+      <p>Opteam is the best software for team optimization and agility. Faithful to the Agile Manifesto, simple enough not to steal your time, yet powerful enough to help you deliver real value.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-light">Contact Us</a>
+        <a href="#waitlist" class="btn-dark">Join Beta Waitlist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-block">
+      <h2>What is Scrum?</h2>
+      <p>Scrum is a flexible framework to help teams work together, break tasks into steps, and deliver results faster.</p>
+    </div>
+    <div class="about-block">
+      <h2>What is Opteam?</h2>
+      <p>Opteam is a versatile management app designed to optimize team performance and streamline company operations efficiently.</p>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <h2>Manage your entire business, optimize team collaboration.</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <img src="assets/team.svg" alt="Teams">
+        <h3>Teams</h3>
+        <p>Manage different components to enhance collaboration and optimization.</p>
+      </div>
+      <div class="card">
+        <img src="assets/sprints.png" alt="Sprints">
+        <h3>Sprints</h3>
+        <p>The Sprint is the core of Opteam, representing scrum events and metrics for better workflow management.</p>
+      </div>
+      <div class="card">
+        <img src="assets/boards.svg" alt="Boards">
+        <h3>Boards</h3>
+        <p>Use the board to manage tasks visually with a clear workflow using To-do, Doing, and Done stages.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- DIFFERENTIATOR -->
+<section class="differentiator">
+  <h2>Why Opteam Stands Out</h2>
+  <p class="subtitle">Three core principles that make Opteam more than a management tool.</p>
+
+  <div class="triad">
+    <div class="triad-card">
+      <img src="assets/icon-ai.svg" alt="AI Icon" class="triad-icon">
+      <h3>AI-Powered Management</h3>
+      <p>Automate workflows, predict outcomes, and enhance decision-making with intelligent agents trained for agile environments.</p>
+    </div>
+
+    <div class="triad-card">
+      <img src="assets/icon-ui.svg" alt="Design Icon" class="triad-icon">
+      <h3>Human-Centered Design</h3>
+      <p>Every screen and interaction is designed to simplify focus and communication — beauty with purpose, not distraction.</p>
+    </div>
+
+    <div class="triad-card">
+      <img src="assets/icon-scale.svg" alt="Scalability Icon" class="triad-icon">
+      <h3>Scalable Agility</h3>
+      <p>Whether you're a small team or a growing company, Opteam adapts to your scale while keeping structure clean and efficient.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- AGENT -->
+    <section class="agent">
+    <h2>Powered by AI Agents</h2>
+    <p>Opteam redefines management tools with an intelligent interface that minimizes time spent on administration and maximizes results through automation.</p>
+    
+    <div class="agent-image">
+    <picture>
+        <!-- versión móvil -->
+        <source srcset="assets/agent1s.svg" media="(max-width: 768px)">
+        <!-- versión desktop -->
+        <img src="assets/agent1.svg" alt="Opteam Agent Interface">
+    </picture>
+    </div>
+
+    </section>
+
+
+
+    <!-- WAITLIST -->
+    <section class="waitlist" id="waitlist">
+    <h2>Join the Opteam Waitlist</h2>
+    <p>Launching globally in <strong>late 2025</strong>.  
+        Be the first to know when Opteam goes live — we’ll notify you by email.</p>
+
+    <form id="waitlistForm">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit">Notify Me</button>
+    </form>
+
+    <small class="disclaimer">We respect your privacy. No spam — just updates.</small>
+    </section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>
+    For partnership inquiries, support, or media requests, please contact us directly at: <span class="email">contact@opteam.app</span>
+  </p>
+  <button id="copyEmailBtn" class="copy-btn">Copy Email</button>
+  <p id="copyMessage" class="copy-message"></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <img src="assets/Logo2.png" alt="Opteam Logo" class="footer-logo">
+    <p>© <span id="year"></span> Opteam&nbsp;LLC &nbsp;|&nbsp; All Rights Reserved&nbsp;®</p>
+  </div>
+</footer>
+
+<script>
+  // dynamic year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // copy email
+  const copyBtn = document.getElementById("copyEmailBtn");
+  const message = document.getElementById("copyMessage");
+
+  copyBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText("contact@opteam.app");
+    message.textContent = "Email copied to clipboard!";
+    setTimeout(() => message.textContent = "", 2000);
+  });
+</script>
+
+
+</body>
+</html>
