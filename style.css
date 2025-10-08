@@ -298,7 +298,9 @@ body {
 .disclaimer {
   display: block;
   font-size: 0.85rem;
-  color: #666;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+  margin-top: 20px;
 }
 
 .waitlist-form {
@@ -319,7 +321,7 @@ body {
 }
 
 .waitlist-form input {
-  background: #000;
+  background: #111111;
   color: #fff;
   border: 1px solid #333;
   border-radius: 8px;
