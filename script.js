@@ -1,17 +1,47 @@
-const modal = document.getElementById('modal');
-const joinBtn = document.getElementById('joinBtn');
+// === WAITLIST CONNECTION ===
 const form = document.getElementById('waitlistForm');
-const msg = document.getElementById('msg');
 
-joinBtn.onclick = () => modal.classList.remove('hidden');
-modal.onclick = (e) => {
-  if (e.target === modal) modal.classList.add('hidden');
-};
+// Crear un mensaje dinámico bajo el formulario
+const msg = document.createElement('p');
+msg.id = 'msg';
+msg.style.marginTop = '10px';
+msg.style.fontSize = '0.95rem';
+msg.style.color = '#60a5fa';
+form.parentElement.appendChild(msg);
+
+// URL del Apps Script (pegá aquí tu URL pública)
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzkENnY3RWusMIb443aDfOT1O2d3N5QaVlyf-e0j7Cr7W4xZxgFlouzJMq-3xD8iAx3/exec';
 
 form.onsubmit = async (e) => {
   e.preventDefault();
+  const email = form.querySelector('input[type="email"]').value.trim();
+
+  if (!email) {
+    msg.textContent = "Please enter a valid email.";
+    msg.style.color = "#f87171";
+    return;
+  }
+
   msg.textContent = "Sending...";
-  // Aquí luego pondremos el Google Sheets endpoint
-  msg.textContent = "✅ Thanks for joining!";
-  form.reset();
+  msg.style.color = "#60a5fa";
+
+  try {
+    const res = await fetch(SHEET_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+
+    if (res.ok) {
+      msg.textContent = "✅ Thanks for joining the waitlist!";
+      msg.style.color = "#4ade80";
+      form.reset();
+    } else {
+      throw new Error("Network error");
+    }
+  } catch (err) {
+    msg.textContent = "❌ Something went wrong. Try again later.";
+    msg.style.color = "#f87171";
+    console.error(err);
+  }
 };
