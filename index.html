@@ -111,26 +111,30 @@
 
 
 <!-- WAITLIST -->
-<section class="waitlist reveal">
-<section class="waitlist" id="waitlist">
+<section class="waitlist reveal" id="waitlist">
   <div class="waitlist-container">
     <div class="waitlist-text">
       <h2>Join the Opteam Waitlist</h2>
       <p>
-        Launching globally in <strong>late 2025</strong>.<br>Get early access, exclusive updates, and help shape the future of agile management.
+        Launching globally in <strong>late 2025</strong>.<br>
+        Get early access, exclusive updates, and help shape the future of agile management.
       </p>
-      <small class="disclaimer">Be the first to know when Opteam goes live — we’ll notify you by email. We value your time. No spam — just updates.</small>
+      <small class="disclaimer">
+        Be the first to know when Opteam goes live — we’ll notify you by email.
+        We value your time. No spam — just updates.
+      </small>
     </div>
 
     <div class="waitlist-form">
-      <form id="waitlistForm">
-        <input type="email" placeholder="Enter your email address" required>
-        <button type="submit">Notify Me</button>
-      </form>
+      <button
+        class="btn-primary"
+        onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf9TnSL7KwTwXUgoJZ0Rpw9v-zoJ7rP0IUA-92gzUokDxeLGg/viewform?usp=header', '_blank')">
+        Join Waitlist
+      </button>
     </div>
   </div>
 </section>
-</section>
+
 
 <!-- CONTACT -->
 <section class="contact reveal">
@@ -199,6 +203,6 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
-<script src="script.js" defer></script>
+
 </body>
 </html>
